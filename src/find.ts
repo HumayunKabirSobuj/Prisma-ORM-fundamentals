@@ -16,6 +16,7 @@ const main = async () => {
 
   //   console.log({ findFirst });
 
+  
   //   findUnique
   const findUnique = await prisma.post.findUniqueOrThrow({
     where: {
