@@ -10,7 +10,7 @@ const main = async () => {
   // findFirst or findFirstOrThrow
   const findFirst = await prisma.post.findFirstOrThrow({
     where: {
-      published: false,
+      published: true,
     },
   });
 
@@ -20,8 +20,11 @@ const main = async () => {
   //   findUnique
   const findUnique = await prisma.post.findUniqueOrThrow({
     where: {
-      id: 1,
+      id: 6,
     },
+    select:{
+      title: true,
+    }
   });
 
   console.log({findUnique});
