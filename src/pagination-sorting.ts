@@ -19,7 +19,16 @@ const paginationSorting = async () => {
       id: 15,
     },
   });
-  console.log("Cursor Based pagination data ,", cursorData);
+  //   console.log("Cursor Based pagination data ,", cursorData);
+
+  //sorting
+
+  const sortedData = await prisma.post.findMany({
+    orderBy: {
+      id: "asc",
+    },
+  });
+  console.log(sortedData);
 };
 
 paginationSorting();
